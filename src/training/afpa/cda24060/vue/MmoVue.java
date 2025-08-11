@@ -15,7 +15,6 @@ public class MmoVue {
 
         switch (charChoice) {
             case 1:
-//                Warrior dd = new Warrior("name",1,100,50, 1 ,1 )
                 System.out.println("guerrier");
                 break;
                 case 2:
