@@ -1,15 +1,15 @@
 package training.afpa.cda24060.modele;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Thief extends Character {
     private int agility;
-    ArrayList<Thief> Thiefs = new ArrayList<Thief>();
+    public static List<Thief> thiefs = new ArrayList<>();
 
 
-
-    public Thief(String name, int level, int health, int agility, Classe classe, Race race) {
-        super(name, level, health, classe, race);
+    public Thief(String name,  Classe classe, Race race, int level, int health, int agility) {
+        super(name, classe, race,  level, health);
         this.agility = agility;
 
     }
@@ -20,8 +20,9 @@ public class Thief extends Character {
         this.agility = agility;
     }
 
-public void addThief(Thief thief) {
-        Thiefs.add(thief);
-}
+
+    public static void addThief(Thief thief) {
+            thiefs.add(thief);
+    }
 
 }

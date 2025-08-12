@@ -8,7 +8,7 @@ public class Classe {
     private String weapon;
     private String armor;
 
-    private static  Map<String, Classe> classes = new HashMap<>();
+//    private static  Map<String, Classe> classes = new HashMap<>();
 
     public Classe(String name, String weapon, String armor) {
         this.name = name;
@@ -16,8 +16,10 @@ public class Classe {
         this.armor = armor;
     }
     public String getName() {
+
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -35,9 +37,13 @@ public class Classe {
     public void setArmor(String armor){
         this.armor = armor;
     }
-public static Map<String,Classe> getClasses(){
-    return classes;
+//public static Map<String,Classe> getClasses(){
+//    return classes;
+//}
+@Override
+public String toString()
+{
+    return this.getName();
 }
-
 
 }

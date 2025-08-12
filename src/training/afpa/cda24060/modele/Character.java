@@ -7,13 +7,12 @@ public class Character {
     private Classe classe;
     private Race race;
 
-    public Character(String name, int level, int health, Classe classe, Race race) {
+    public Character(String name, Classe classe, Race race,  int level, int health) {
         this.name = name;
-        this.level = level;
-        this.health = health;
         this.classe = classe;
         this.race = race;
-
+        this.level = 1;
+        this.health = 100;
     }
     public String getName() {
         return name;

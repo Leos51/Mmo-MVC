@@ -1,14 +1,15 @@
 package training.afpa.cda24060.modele;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Warrior extends Character {
         int strength;
-        ArrayList<Warrior> warriors = new ArrayList<Warrior>();
+        public static List<Warrior> warriors = new ArrayList<Warrior>();
 
 
-        public Warrior(String name, int level, int health,int strength , Classe classe, Race race) {
-        super(name, level, health, classe, race);
+        public Warrior(String name,  Classe classe, Race race, int level, int health,int strength) {
+        super(name, classe, race,  level, health);
         this.strength = strength;
 
 
@@ -21,7 +22,7 @@ public class Warrior extends Character {
             this.strength = strength;
     }
 
-    public void addWarrior(Warrior warrior) {
+    public static void addWarrior(Warrior warrior) {
             warriors.add(warrior);
     }
 }

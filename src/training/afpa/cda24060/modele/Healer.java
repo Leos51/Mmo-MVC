@@ -5,10 +5,11 @@ import java.util.List;
 
 public class Healer extends Character {
     private int mana;
-    private static List<Healer> healers = new ArrayList();
+    public static List<Healer> healers = new ArrayList<>();
 
-    public Healer(String name, int level, int health, int mana, Classe classe, Race race) {
-        super(name, level, health, classe, race);
+
+    public Healer(String name, Classe classe, Race race, int level, int health, int mana) {
+        super(name,  classe, race, level, health);
         this.mana=mana;
     }
 
@@ -19,23 +20,23 @@ public class Healer extends Character {
         this.mana = mana;
     }
 
-    public void addHealer(Healer healer) {
+    public static void addHealer(Healer healer) {
         healers.add(healer);
     }
-
-    public static List<Healer> getHealers() {
-        return healers;
+//
+//    public static List<Healer> getHealers() {
+//        return healers;
+//    }
+//
+//    public void setHealers(List<Healer> healers) {
+//        this.healers = healers;
+//
+//    }
+//    public static void showHealers() {
+//        for (Healer healer : healers) {
+//            System.out.println(healer.toString());
+//        }
     }
 
-    public void setHealers(List<Healer> healers) {
-        this.healers = healers;
-
-    }
-    public static void showHealers() {
-        for (Healer healer : healers) {
-            System.out.println(healer.toString());
-        }
-    }
 
 
-}
