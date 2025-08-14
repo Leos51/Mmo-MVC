@@ -25,4 +25,13 @@ public class Thief extends Character {
             thiefs.add(thief);
     }
 
+    public static Thief findThiefByName(String name) {
+        for (Thief thief : thiefs) {
+            if (thief.getName().equals(name)) {
+                return thief;
+            }
+        }
+        return null;
+    }
+
 }

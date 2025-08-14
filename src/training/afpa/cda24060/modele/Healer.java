@@ -36,6 +36,22 @@ public class Healer extends Character {
 //        for (Healer healer : healers) {
 //            System.out.println(healer.toString());
 //        }
+
+        public static Healer findHealerByName(String name) {
+            for (Healer healer : healers) {
+                if (healer.getName().equals(name)) {
+                    return healer;
+                }
+            }
+            return null;
+        }
+        public static void removeHealer(String name) {
+            Healer healer = findHealerByName(name);
+            healers.remove(healer);
+        }
+
+
+
     }
 
 

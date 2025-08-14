@@ -45,4 +45,9 @@ public class Character {
     public void setRace(Race race) {
         this.race = race;
     }
+
+    @Override
+    public String toString() {
+        return "Je m'appelle " + this.getName() + ", je suis un " + this.getClasse() + " " + this.getRace() + "!";
+    }
 }

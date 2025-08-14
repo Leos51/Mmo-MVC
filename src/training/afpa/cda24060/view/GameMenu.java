@@ -9,7 +9,9 @@ import training.afpa.cda24060.utility.UserInput;
 
 import static training.afpa.cda24060.modele.Healer.healers;
 import static training.afpa.cda24060.modele.Thief.thiefs;
-import static training.afpa.cda24060.modele.Warrior.warriors;
+import static training.afpa.cda24060.modele.Warrior.getWarriors;
+import static training.afpa.cda24060.modele.Warrior.showWarriorsList;
+
 
 public class GameMenu {
     private static String characterName;
@@ -59,13 +61,14 @@ public class GameMenu {
     }
 
 
-    public static void home() {
-        System.out.println("Creation du monde ...");
-    }
+
 
     public static void displayMenu() {
-        System.out.println("Game Name");
-        System.out.println("___________");
+        System.out.println();
+        System.out.println("----------------");
+        System.out.println("| MMO 2A World |");
+        System.out.println("----------------");
+        System.out.println();
         System.out.println("1 - Nouveau personnage");
         System.out.println("2 - Votre personnage");
         System.out.println("3 - Voir la liste des guerriers");
@@ -79,24 +82,12 @@ public class GameMenu {
 
     public static void choiceMenu(){
         switch (UserInput.userInt("Votre Choix [1-5] ou [0] pour quitter : ")) {
-            case 1:
-                characterCreation();
-                break;
-            case 2:
-                break;
-            case 3:
-                showWarriors();
-                break;
-            case 4:
-                showHealers();
-                break;
-            case 5:
-                showThiefs();
-                break;
-            case 0:
-                System.exit(0);
-                break;
-
+            case 1 -> characterCreation();
+            case 2 -> characterCreation(); //à remplacer
+            case 3 -> showWarriorsList();
+            case 4 -> showHealers();
+            case 5 -> showThiefs();
+            case 0  -> System.exit(0);
         }
 
     }
@@ -113,27 +104,28 @@ public class GameMenu {
                 System.err.println("Erreur de saisie!");
             }}while (!flag);
         MmoController.addCharToList();
-
+        System.out.println("Votre personnage : " + characterName + " est crée");
+        displayMenu();
     }
 
-    public static void showWarriors(){
-        System.out.println("Warriors");
-        for(Warrior warrior : warriors)
-            System.out.println(warrior.getName());
-    }
+
 
     public static void showThiefs(){
         System.out.println("Thiefs");
+        System.out.println("--------");
         for(Thief thief : thiefs){
             System.out.println(thief.getName());
         }
+        displayMenu();
     }
 
     public static void showHealers(){
         System.out.println("Healers");
+        System.out.println("--------");
         for(Healer healer : healers){
             System.out.println(healer.getName());
         }
+        displayMenu();
 
     }
 

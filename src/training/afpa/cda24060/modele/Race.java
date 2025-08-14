@@ -5,7 +5,8 @@ import java.util.Map;
 
 public class Race {
     private String name;
-    private static  Map<String, Race> races = new HashMap<>();
+    private static Map<String, Race> races = new HashMap<>();
+
 
     public Race(String name) {
         this.name = name;
@@ -23,6 +24,11 @@ public class Race {
 
     Map<String, Race> getRaces() {
         return races;
+    }
+
+    @Override
+    public String toString() {
+        return this.getName();
     }
 
 }
